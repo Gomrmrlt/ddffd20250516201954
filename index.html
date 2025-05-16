@@ -1,0 +1,723 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ddffd ($dffdfd) - GigaChad Finance</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Luckiest+Guy&family=Rubik:wght@400;700;900&display=swap');
+        
+        :root {
+            --primary: #5D4FFF;
+            --secondary: #FF4F8B;
+            --tertiary: #53D8FB;
+            --dark: #1E1E2E;
+            --light: #F5F5F5;
+            --accent: #FFD700;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 20% 35%, rgba(93, 79, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 65%, rgba(255, 79, 139, 0.15) 0%, transparent 50%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Bangers', cursive;
+            font-size: 2.5rem;
+            color: var(--accent);
+            text-shadow: 3px 3px 0 var(--secondary);
+            letter-spacing: 2px;
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            font-size: 1rem;
+        }
+        
+        nav a:hover {
+            color: var(--accent);
+        }
+        
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 0;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(135deg, rgba(93, 79, 255, 0.1) 0%, rgba(255, 79, 139, 0.1) 100%);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            width: 60%;
+            z-index: 1;
+        }
+        
+        .hero-image {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 50%;
+            max-width: 500px;
+            z-index: 0;
+        }
+        
+        h1 {
+            font-family: 'Luckiest Guy', cursive;
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--light);
+            text-shadow: 
+                4px 4px 0 var(--primary),
+                8px 8px 0 rgba(0,0,0,0.3);
+        }
+        
+        h1 span {
+            display: block;
+            color: var(--accent);
+        }
+        
+        h2 {
+            font-family: 'Luckiest Guy', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--tertiary);
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--tertiary);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--secondary);
+            color: var(--light);
+            border: none;
+            border-radius: 8px;
+            font-family: 'Bangers', cursive;
+            font-size: 1.2rem;
+            text-decoration: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 
+                0 5px 0 rgba(0,0,0,0.2),
+                inset 0 -3px 0 rgba(0,0,0,0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 7px 0 rgba(0,0,0,0.2),
+                inset 0 -3px 0 rgba(0,0,0,0.2);
+        }
+        
+        .btn:active {
+            transform: translateY(3px);
+            box-shadow: 
+                0 2px 0 rgba(0,0,0,0.2),
+                inset 0 -3px 0 rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 2rem;
+        }
+        
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--dark);
+            color: var(--light);
+            font-size: 1.5rem;
+            transition: transform 0.3s, background 0.3s;
+            text-decoration: none;
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.1) rotate(5deg);
+            background: var(--accent);
+            color: var(--dark);
+        }
+        
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: var(--secondary);
+            border-radius: 5px;
+        }
+        
+        .about-content {
+            background: rgba(30, 30, 46, 0.8);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            border: 2px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-content::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 100px;
+            height: 100px;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+        
+        .tokenomics-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .tokenomics-card {
+            background: rgba(30, 30, 46, 0.8);
+            border-radius: 20px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 2px solid var(--tertiary);
+            transition: transform 0.3s;
+        }
+        
+        .tokenomics-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .token-stat {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .token-label {
+            font-size: 1rem;
+            color: var(--tertiary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .token-address {
+            margin-top: 1rem;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            font-family: monospace;
+            word-break: break-all;
+            font-size: 0.8rem;
+        }
+        
+        .roadmap-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .roadmap-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 6px;
+            background: var(--tertiary);
+            transform: translateX(-50%);
+        }
+        
+        .roadmap-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 50%;
+            padding: 0 2rem;
+        }
+        
+        .roadmap-item:nth-child(odd) {
+            margin-left: auto;
+        }
+        
+        .roadmap-item:nth-child(even) {
+            text-align: right;
+        }
+        
+        .roadmap-content {
+            background: rgba(30, 30, 46, 0.8);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 2px solid var(--primary);
+            position: relative;
+        }
+        
+        .roadmap-item:nth-child(odd) .roadmap-content::before {
+            content: "";
+            position: absolute;
+            right: 100%;
+            top: 20px;
+            border: 15px solid transparent;
+            border-right-color: var(--primary);
+        }
+        
+        .roadmap-item:nth-child(even) .roadmap-content::before {
+            content: "";
+            position: absolute;
+            left: 100%;
+            top: 20px;
+            border: 15px solid transparent;
+            border-left-color: var(--primary);
+        }
+        
+        .roadmap-item::after {
+            content: "";
+            position: absolute;
+            top: 20px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--accent);
+            z-index: 1;
+        }
+        
+        .roadmap-item:nth-child(odd)::after {
+            left: -17px;
+        }
+        
+        .roadmap-item:nth-child(even)::after {
+            right: -17px;
+        }
+        
+        .roadmap-phase {
+            font-family: 'Bangers', cursive;
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .how-to-buy {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: rgba(30, 30, 46, 0.8);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-left: 5px solid var(--secondary);
+            transition: transform 0.3s;
+        }
+        
+        .step:hover {
+            transform: translateX(10px);
+        }
+        
+        .step-number {
+            font-family: 'Luckiest Guy', cursive;
+            font-size: 3rem;
+            color: var(--accent);
+            line-height: 1;
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+        }
+        
+        .step-content h3 {
+            font-family: 'Bangers', cursive;
+            font-size: 1.5rem;
+            color: var(--tertiary);
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background: var(--dark);
+            padding: 3rem 0;
+            border-top: 5px solid var(--primary);
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            font-family: 'Bangers', cursive;
+            font-size: 2rem;
+            color: var(--accent);
+        }
+        
+        .footer-links ul {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            width: 100%;
+            text-align: center;
+            margin-top: 2rem;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero {
+                text-align: center;
+                padding: 2rem 0;
+                min-height: auto;
+            }
+            
+            .hero-content {
+                width: 100%;
+            }
+            
+            .hero-image {
+                position: relative;
+                width: 100%;
+                max-width: 300px;
+                margin: 2rem auto 0;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+            
+            .roadmap-line {
+                left: 30px;
+            }
+            
+            .roadmap-item {
+                width: 100%;
+                padding-left: 60px;
+                padding-right: 0;
+            }
+            
+            .roadmap-item:nth-child(even) {
+                text-align: left;
+            }
+            
+            .roadmap-item:nth-child(odd)::after,
+            .roadmap-item:nth-child(even)::after {
+                left: 13px;
+                right: auto;
+            }
+            
+            .roadmap-item:nth-child(even) .roadmap-content::before {
+                left: auto;
+                right: 100%;
+                border-right-color: var(--primary);
+                border-left-color: transparent;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-links ul {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">$dffdfd</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#tokenomics">Tokenomics</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#how-to-buy">How to Buy</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>ddffd: <span>FLEX HARD, EARN HARDER</span></h1>
+                <p class="subtitle">The People's GigaChad Token - Building Wealth With Supreme Confidence</p>
+                <a href="https://gofundmeme.io/campaigns/3nA1o9VnEVgrD7UL3pCRoYmP9xwX5dDZZzT2Wam3GhZc" class="btn btn-primary">Buy $dffdfd</a>
+                
+                <div class="social-icons">
+                    <a href="https://twitter.com/nueltechie" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                        </svg>
+                    </a>
+                    <a href="https://t.me/nuelyoungtek" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19l-9.5 5.99-4.1-1.34c-.88-.29-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 400 400">
+                    <rect width="100%" height="100%" fill="none"/>
+                    <path d="M200,30 C270,30 330,90 330,160 C330,230 270,290 200,290 C130,290 70,230 70,160 C70,90 130,30 200,30 Z" fill="#FFD700"/>
+                    <circle cx="150" cy="130" r="20" fill="#1E1E2E"/>
+                    <circle cx="250" cy="130" r="20" fill="#1E1E2E"/>
+                    <path d="M160,190 C160,190 180,230 200,230 C220,230 240,190 240,190" stroke="#1E1E2E" stroke-width="12" fill="none"/>
+                    <path d="M100,100 L100,70 L130,70 M300,100 L300,70 L270,70" stroke="#1E1E2E" stroke-width="10" fill="none"/>
+                    <path d="M150,250 C150,250 200,270 250,250" stroke="#1E1E2E" stroke-width="8" fill="none"/>
+                    <path d="M130,350 L200,310 L270,350" fill="#5D4FFF"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About $dffdfd</h2>
+            <div class="about-content">
+                <p>Welcome, my people! $dffdfd is not just another meme token—it's a financial revolution powered by the strength and confidence of the GigaChad himself. Born from the collective spirit of our community, we're building a token that stands tall like a Chad among the Soyjaks of traditional finance. With unshakeable determination and a touch of humor, we're creating a token ecosystem where "good morning" isn't just a greeting—it's a promise of financial gains to come. Join our growing family and experience the power of GigaChad Finance!</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="tokenomics">
+        <div class="container">
+            <h2 class="section-title">Tokenomics</h2>
+            <div class="tokenomics-container">
+                <div class="tokenomics-card">
+                    <div class="token-stat">1,000,000,000</div>
+                    <div class="token-label">Total Supply</div>
+                </div>
+                <div class="tokenomics-card">
+                    <div class="token-label">Token Address</div>
+                    <div class="token-address">3nA1o9VnEVgrD7UL3pCRoYmP9xwX5dDZZzT2Wam3GhZc</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="roadmap">
+        <div class="container">
+            <h2 class="section-title">Roadmap</h2>
+            <div class="roadmap-container">
+                <div class="roadmap-line"></div>
+                
+                <div class="roadmap-item">
+                    <div class="roadmap-content">
+                        <div class="roadmap-phase">Phase 1: The Awakening</div>
+                        <p>Launch token, build community, and show the world the power of our people. Initial marketing push to spread awareness.</p>
+                    </div>
+                </div>
+                
+                <div class="roadmap-item">
+                    <div class="roadmap-content">
+                        <div class="roadmap-phase">Phase 2: The Flex</div>
+                        <p>Major exchange listings, community expansion, and partnership announcements. GigaChad Energy spreads!</p>
+                    </div>
+                </div>
+                
+                <div class="roadmap-item">
+                    <div class="roadmap-content">
+                        <div class="roadmap-phase">Phase 3: The Empire</div>
+                        <p>Ecosystem development, utility expansion, and community governance implementation. Good morning to financial freedom!</p>
+                    </div>
+                </div>
+                
+                <div class="roadmap-item">
+                    <div class="roadmap-content">
+                        <div class="roadmap-phase">Phase 4: The Legacy</div>
+                        <p>Global domination, mainstream adoption, and the birth of GigaChad Finance 2.0. A new era begins!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="how-to-buy">
+        <div class="container">
+            <h2 class="section-title">How to Buy $dffdfd</h2>
+            <div class="how-to-buy">
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Get a SOL Wallet</h3>
+                            <p>Download and set up a Solana-compatible wallet like Phantom or Solflare.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Visit our DEX</h3>
+                            <p>Head over to <a href="https://gofundmeme.io/" style="color: var(--accent); text-decoration: none;">GoFundMeme</a> to access our trading platform.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Swap SOL for $dffdfd</h3>
+                            <p>Connect your wallet and exchange your SOL for $dffdfd tokens. Welcome to the GigaChad family!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="https://gofundmeme.io/campaigns/3nA1o9VnEVgrD7UL3pCRoYmP9xwX5dDZZzT2Wam3GhZc" class="btn">Buy $dffdfd Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">$dffdfd</div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#tokenomics">Tokenomics</a></li>
+                        <li><a href="#roadmap">Roadmap</a></li>
+                        <li><a href="https://gofundmeme.io/campaigns/3nA1o9VnEVgrD7UL3pCRoYmP9xwX5dDZZzT2Wam3GhZc">Buy $dffdfd</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 $dffdfd - GigaChad Finance. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+```
